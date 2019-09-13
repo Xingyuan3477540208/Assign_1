@@ -1,0 +1,19 @@
+---
+title: "p8105_hw1_xc2473"
+output: html_document
+---
+```{r}
+library(tidyverse)
+
+ran_sample = rnorm(8)
+vec_logic = ifelse(ran_sample > 0, TRUE, FALSE)
+vec_char = c("A", "B", "C", "D", "E", "F", "G", "H")
+vec_factor = factor(c("low", "low", "medium", "medium", "high", "high", "low", "high"))
+
+question_1_df = tibble(
+  ran_sample,
+  vec_logic,
+  vec_char,
+  vec_factor
+)
+```
