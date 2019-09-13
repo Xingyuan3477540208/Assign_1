@@ -17,3 +17,12 @@ question_1_df = tibble(
   vec_factor
 )
 ```
+
+```{r}
+mean(ran_sample)
+mean(vec_logic)
+mean(vec_char)
+mean(vec_factor)
+```
+We only succeed in taking the mean of ran_sample which is numeric. It doesn't work for logical, character and factor vector to take means.
+
