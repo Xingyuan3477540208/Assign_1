@@ -16,13 +16,18 @@ question_1_df = tibble(
   vec_char,
   vec_factor
 )
-```
 
-```{r}
 mean(ran_sample)
 mean(vec_logic)
 mean(vec_char)
 mean(vec_factor)
 ```
-We only succeed in taking the mean of ran_sample which is numeric. It doesn't work for logical, character and factor vector to take means.
+We only succeed in taking the mean of ran_sample which is numeric and vec_logic which is logical vector. It doesn't work for character and factor vector to take means.
+
+```{r echo = TRUE, results= "hide"}
+as.numeric(vec_logic)
+as.numeric(vec_char)
+as.numeric(vec_factor)
+```
+
 
