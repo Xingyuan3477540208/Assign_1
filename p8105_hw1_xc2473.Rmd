@@ -2,6 +2,7 @@
 title: "p8105_hw1_xc2473"
 output: html_document
 ---
+Problem One:
 ```{r}
 library(tidyverse)
 
@@ -29,5 +30,42 @@ as.numeric(vec_logic)
 as.numeric(vec_char)
 as.numeric(vec_factor)
 ```
+It is found that logical and factor vector could be converted into numeric value, while the character vector could not. It can explain why logical vetor can take the mean, but cannot help to explain why factor vector cannot.
 
+```{r}
+A = as.numeric(vec_logic) * ran_sample
+B = as.factor(vec_logic) * ran_sample
+C = as.numeric(as.factor(vec_logic)) * ran_sample
+```
+Problem Two:
+```{r}
+x = rnorm(500)
+y = rnorm(500)
+vec_logic_1 = ifelse((x + y) > 1, TRUE, FALSE)
+num = as.numeric(vec_logic_1)
+fac = as.factor(vec_logic_1)
 
+question_2_df = tibble(
+  x,
+  y,
+  vec_logic_1,
+  num,
+  fac
+)
+```
+This dataset contain 'r nrow(question_2_df)' rows and 'r ncol(question_2_df)' columns).
+The mean of x is 'r mean(x)'.
+The median of x is 'r median(x)'.
+The standard deviation of x is 'r sd(x)'.
+The proportion of cases for which x + y > 1 is 'r prop.table(vec_logic_1)'.
+
+```{r}
+ggplot(question_2_df, aes(x = x, y = y, color = "red")) + geom_point()
+
+ggsave("myplot.pdf")
+
+ggplot(question_2_df, aes(x = x, y = y, color = num)) + geom_point()
+       
+ggplot(question_2_df, aes(x = x, y = y, color = fac)) + geom_point()
+
+```
