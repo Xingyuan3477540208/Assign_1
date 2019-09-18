@@ -53,11 +53,11 @@ question_2_df = tibble(
   fac
 )
 ```
-This dataset contain 'r nrow(question_2_df)' rows and 'r ncol(question_2_df)' columns).
-The mean of x is 'r mean(x)'.
-The median of x is 'r median(x)'.
-The standard deviation of x is 'r sd(x)'.
-The proportion of cases for which x + y > 1 is 'r prop.table(vec_logic_1)'.
+This dataset contain `r nrow(question_2_df)` rows and `r ncol(question_2_df)` columns.
+The mean of x is `r mean(x)`.
+The median of x is `r median(x)`.
+The standard deviation of x is `r sd(x)`.
+The proportion of cases for which x + y > 1 is `r sum(vec_logic_1, na.rm = TRUE)/nrow(question_2_df)`.
 
 ```{r}
 ggplot(question_2_df, aes(x = x, y = y, color = "red")) + geom_point()
