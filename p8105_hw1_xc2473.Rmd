@@ -1,6 +1,6 @@
 ---
 title: "p8105_hw1_xc2473"
-output: html_document
+output: github_document
 ---
 Problem One:
 ```{r}
